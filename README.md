@@ -1,18 +1,20 @@
-## Getting Started
+## Iniciando
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bem vindo ao meu repositório de exemplos em Java para disciplinas de OO com estudo de caso em Java.
+Busco trazer desde situações iniciais de sitaxe, passando por cada pilar e com extensão a práticas comunitárias (padrões, etc).
 
-## Folder Structure
+## Estrutura
 
-The workspace contains two folders by default, where:
+A estrutura de "src" pode ser observada da seguinte forma:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Pacote utilitarios: Facilita uso de IO com classes Teclado e Video;
+Pacote sintaxes: Explora controle de fluxo para código dentro de funções e aplicações java;
+Pacote designPatterns: Explora exemplos de padrões de projetos da GoF;
+Pacote Object Calisthenics: Explora exemplos de práticas de codificação com ideias Clena Code;
+Pacote DDD: O mesmo, explorando o Domain Driven Design;
+Pacote SOLID: O mesmo, para cada princíio SOLID;
+Pacote de pilares: Traz exemplos em sub pacotes de cada pilar: Abstração, Encapslamento, Herança e Polimorfismo;
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Autor
+Valdemar Lorenzon Junior
+juniorlorenzonvaldemar@gmail.com
