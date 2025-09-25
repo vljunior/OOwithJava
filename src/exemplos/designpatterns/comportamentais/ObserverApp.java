@@ -3,19 +3,19 @@ package exemplos.designpatterns.comportamentais;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public*/ interface Observer {
+/*public*/ interface Observador {
     void atualizar(String noticia);
 }
 
-/*public*/ class CanalNoticias {
+/*public*/ class Observantes { //Repositorio dos assinantes, programação pra implementação
     //Associação 0..N
-    private List<Observer> assinantes = new ArrayList<>(); 
+    private List<Observador> assinantes = new ArrayList<>(); 
 
-    public void adicionarAssinante(Observer o) {
+    public void adicionarAssinante(Observador o) {
         assinantes.add(o);
     }
 
-    public void removerAssinante(Observer o) {
+    public void removerAssinante(Observador o) {
         assinantes.remove(o);
     }
 
@@ -24,14 +24,14 @@ import java.util.List;
         notificarAssinantes(noticia);
     }
 
-    private void notificarAssinantes(String noticia) {
-        for (Observer o : assinantes) {
+    private void notificarAssinantes(String noticia) { //varredura d comunicação
+        for (Observador o : assinantes) {
             o.atualizar(noticia);
         }
     }
 }
 
-/*public*/ class AssinanteEmail implements Observer {
+/*public*/ class AssinanteEmail implements Observador {
     private String email;
 
     public AssinanteEmail(String email) {
@@ -44,7 +44,7 @@ import java.util.List;
     }
 }
 
-/*public*/ class AssinanteApp implements Observer {
+/*public*/ class AssinanteApp implements Observador {
     private String nome;
 
     public AssinanteApp(String nome) {
@@ -59,11 +59,11 @@ import java.util.List;
 
 public class ObserverApp {
     public static void main(String[] args) {
-        CanalNoticias canal = new CanalNoticias();
+        Observantes canal = new Observantes();
 
-        Observer assinante1 = new AssinanteEmail("joao@email.com");
-        Observer assinante2 = new AssinanteApp("Maria");
-        Observer assinante3 = new AssinanteApp("Carlos");
+        Observador assinante1 = new AssinanteEmail("joao@email.com");
+        Observador assinante2 = new AssinanteApp("Maria");
+        Observador assinante3 = new AssinanteApp("Carlos");
 
         canal.adicionarAssinante(assinante1);
         canal.adicionarAssinante(assinante2);
