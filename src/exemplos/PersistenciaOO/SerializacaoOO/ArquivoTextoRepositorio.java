@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.Generics.Aluno;
+package exemplos.PersistenciaOO.SerializacaoOO;
 
 import java.io.*;
 import java.util.*;

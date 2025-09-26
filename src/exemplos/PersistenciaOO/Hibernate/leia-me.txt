@@ -1,0 +1,12 @@
+Sem uso de MAVEN:
+
+lib/
+     ├─ hibernate-core-6.x.x.jar
+     ├─ jakarta.persistence-api-3.1.0.jar
+     ├─ mysql-connector-j-8.x.x.jar      (se usar MySQL)
+     ├─ jboss-logging-3.x.x.Final.jar
+     ├─ byte-buddy-1.x.x.jar
+     ├─ hibernate-commons-annotations-6.x.x.jar
+     └─ (outros jars que o hibernate-core pedir)
+Dica: baixe os .jar e coloque na pasta lib/. Na IDE (Eclipse/IntelliJ), adicione tudo ao Build Path.
+Se rodar no terminal, usaremos -cp "lib/*;bin" (Windows) ou -cp "lib/*:bin" (Linux/Mac).
