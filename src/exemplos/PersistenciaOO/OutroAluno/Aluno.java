@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.Hibernate;
+package exemplos.PersistenciaOO.OutroAluno;
 
 import jakarta.persistence.*;
 

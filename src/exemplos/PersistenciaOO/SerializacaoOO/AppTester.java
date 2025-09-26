@@ -41,7 +41,7 @@ public class AppTester {
 
         // Escolher estratégia: Binário
         Servico<Aluno> servicoBin = new Servico<>(
-            new SerializacaoRepositorio<>("alunos.dat")
+            new BinarioRepositorio<>("alunos.dat")
         );
 
         servicoBin.salvar(alunos);

@@ -13,10 +13,10 @@ import java.util.*;
  * É como guardar objetos numa caixa fechada, que só o programa sabe abrir (não legível no bloco de notas).
  */
 
-public class SerializacaoRepositorio<T> implements Repositorio<T> {
+public class BinarioRepositorio<T> implements Repositorio<T> {
     private String arquivo;
 
-    public SerializacaoRepositorio(String arquivo) {
+    public BinarioRepositorio(String arquivo) {
         this.arquivo = arquivo;
     }
 

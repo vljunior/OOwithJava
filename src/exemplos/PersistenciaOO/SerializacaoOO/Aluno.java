@@ -30,18 +30,18 @@ public class Aluno implements Serializable {
 
     @Override    
     public String toString() {
-        return nome + "," + idade; // formato simples de lista
+        return nome + ";" + idade; // formato simples de lista
     }
 
     /* Este método faz parte do processo, que recebe uma string 
-     * lista com separador por vírgulas e reconstroi um objeto     
+     * lista com separador por ponto e vírgula e reconstroi um objeto     
      */
 
     public static Aluno fromString(String linha) {
         //split quebra em parters pelo delimitador, colocando no vetor
-        String[] p = linha.split(",");
+        String[] p = linha.split(";");
         //pegando cada elemento do vetor criado a partir de linha
-        //e fazendo split pelo separador ","
+        //e fazendo split pelo separador ";"
         //Jogando no construtor para retomar o objeto e o retornando        
         return new Aluno(p[0], Integer.parseInt(p[1]));
     }

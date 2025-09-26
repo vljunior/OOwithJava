@@ -1,2 +1,2 @@
-Maria,20
-João,22
+Maria;20
+João;22
