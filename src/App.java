@@ -20,8 +20,8 @@ public class App {
         Video.mensagem("Foi digitado: " + valor);    
        
         Video.escreverLento("Programa vai ser encerrado!", 100);
-        Video.pausa();        
-
+        Video.pausa();          
+        
         System.exit(0); //isso em qualquer lugar fecha a aplicação
     }
 }
