@@ -33,7 +33,7 @@ public class ArquivoTextoRepositorio<T extends SerializableTxt> implements Repos
     public void salvar(List<T> lista) throws IOException {
         try (PrintWriter pw = new PrintWriter(new FileWriter(arquivo))) {
             for (T obj : lista) {
-                pw.println(obj.toSerializableTxt());
+                pw.println(obj.toSerializableTxt()); //por isso <T extends SerializableTxt>
             }
         }
     }
@@ -45,7 +45,7 @@ public class ArquivoTextoRepositorio<T extends SerializableTxt> implements Repos
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
                 @SuppressWarnings("unchecked")
-                T obj = (T) prototipo.fromSerializableTxt(linha);
+                T obj = (T) prototipo.fromSerializableTxt(linha); //por isso <T extends SerializableTxt>
                 out.add(obj);
             }
         }
