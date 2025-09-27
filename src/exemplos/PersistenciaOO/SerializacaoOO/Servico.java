@@ -12,8 +12,8 @@ import java.util.*;
  * É como o funcionário do cartório → ele não é a gaveta (repositório), mas quem decide quando colocar ou retirar papéis dela.
  */
 
-public class Servico<T> {
-    private Repositorio<T> repositorio; //Injeção, associação
+public class Servico<T extends SerializableTxt> {
+    private Repositorio<T> repositorio; // Injeção, associação
 
     public Servico(Repositorio<T> repositorio) {
         this.repositorio = repositorio;

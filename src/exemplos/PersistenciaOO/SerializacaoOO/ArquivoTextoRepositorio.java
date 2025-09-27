@@ -20,33 +20,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ArquivoTextoRepositorio implements Repositorio<Aluno> {
+public class ArquivoTextoRepositorio<T extends SerializableTxt> implements Repositorio<T> {
     private final String arquivo;
+    private final T prototipo; // objeto "modelo" para reconstruir
 
-    public ArquivoTextoRepositorio(String arquivo) {
+    public ArquivoTextoRepositorio(String arquivo, T prototipo) {
         this.arquivo = arquivo;
+        this.prototipo = prototipo;
     }
 
     @Override
-    public void salvar(List<Aluno> lista) throws IOException {
+    public void salvar(List<T> lista) throws IOException {
         try (PrintWriter pw = new PrintWriter(new FileWriter(arquivo))) {
-            for (Aluno obj : lista) {
-                /* usa toString: CUIDADO IMPORTANTE, 
-                   foi feito pra simplificar, mas trava o toString!
-                   Pode resolver com uma interface nova exigindo 
-                   um metodo conversor de string do objeto*/
-                pw.println(obj.toString()); 
+            for (T obj : lista) {
+                pw.println(obj.toSerializableTxt());
             }
         }
     }
 
     @Override
-    public List<Aluno> listar() throws IOException {
-        List<Aluno> out = new ArrayList<>();
+    public List<T> listar() throws IOException {
+        List<T> out = new ArrayList<>();
         try (Scanner sc = new Scanner(new File(arquivo))) {
             while (sc.hasNextLine()) {
                 String linha = sc.nextLine();
-                out.add(Aluno.fromString(linha)); // reconstrói
+                @SuppressWarnings("unchecked")
+                T obj = (T) prototipo.fromSerializableTxt(linha);
+                out.add(obj);
             }
         }
         return out;

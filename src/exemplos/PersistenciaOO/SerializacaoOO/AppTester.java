@@ -32,7 +32,7 @@ public class AppTester {
 
         // 2. Criar serviço de TXT
         Servico<Aluno> servicoTxt = new Servico<>(
-            new ArquivoTextoRepositorio("alunos.txt")
+            new ArquivoTextoRepositorio<>("alunos.txt", new Aluno("", 0))
         );
 
         // 3. Salvar alunos
@@ -56,6 +56,6 @@ public class AppTester {
         System.out.println("\nAlunos recuperados do BIN:");
         for (Aluno a : servicoBin.carregar()) {
             System.out.println(a);
-        }    
+        }
     }
 }

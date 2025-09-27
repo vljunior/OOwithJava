@@ -11,7 +11,7 @@ import java.io.*;
  *    É o “molde” para criar objetos reais que queremos guardar.
  */
 
-public class Aluno implements Serializable {
+public class Aluno implements Serializable, SerializableTxt {
     private String nome;
     private int idade;
 
@@ -33,16 +33,24 @@ public class Aluno implements Serializable {
         return nome + ";" + idade; // formato simples de lista
     }
 
-    /* Este método faz parte do processo, que recebe uma string 
-     * lista com separador por ponto e vírgula e reconstroi um objeto     
+    /* Estes métodos fazem parte do processo, gera o aluno serlizado em txt e
+     * que recebe uma string lista com separador por ponto e vírgula 
+     * e reconstroi um objeto     
      */
 
-    public static Aluno fromString(String linha) {
-        //split quebra em parters pelo delimitador, colocando no vetor
-        String[] p = linha.split(";");
+    @Override    
+    public String toSerializableTxt() {
+        return nome + ";" + idade; // formato simples de lista
+    }
+
+    
+    @Override
+    public Aluno fromSerializableTxt(String linha) {
+        //split quebra em parters pelo delimitador, colocando no vetor        
         //pegando cada elemento do vetor criado a partir de linha
         //e fazendo split pelo separador ";"
         //Jogando no construtor para retomar o objeto e o retornando        
-        return new Aluno(p[0], Integer.parseInt(p[1]));
+        String[] partes = linha.split(";");
+        return new Aluno(partes[0], Integer.parseInt(partes[1]));
     }
 }

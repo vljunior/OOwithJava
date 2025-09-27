@@ -25,7 +25,7 @@ public class A_TiposVariaveis { //inicio da classe
     public static void main (String[] args)  {   
                                           
               //Tipos primitivos de dados com camelCase
-              int      valorInteiro        = 0;      //padrão de inicialização é 0
+              int      valorInteiro        = 0;      //padrão de inicialização é 0                            
               boolean  logicoVerdadeiro    = true;   //padrão de inicialização é false
               // OBS: Evitar o uso de float, prefira double para maior precisão.
               float    valorFlutuante      = 3.14f;  //ou double sem f 

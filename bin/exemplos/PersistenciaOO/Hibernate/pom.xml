@@ -8,7 +8,7 @@
     <!-- Identificação do projeto -->
     <groupId>exemplos.PersistenciaOO.Hibernate</groupId>
     <artifactId>aluno-app</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>   
 
     <!-- Versão do Java -->
     <properties>
