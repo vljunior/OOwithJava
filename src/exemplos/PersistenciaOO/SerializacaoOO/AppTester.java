@@ -24,28 +24,38 @@ import java.util.function.Function;
 
 public class AppTester {
     public static void main(String[] args) throws Exception {
-      
-        List<Aluno> alunos = Arrays.asList(
-            new Aluno("Maria", 20),
-            new Aluno("João", 22)
-        );
 
-        // Escolher estratégia: Texto
+        // 1. Criar lista de alunos
+        List<Aluno> alunos = new ArrayList<>();
+        alunos.add(new Aluno("Maria", 20));
+        alunos.add(new Aluno("João", 22));
+
+        // 2. Criar serviço de TXT
         Servico<Aluno> servicoTxt = new Servico<>(
-            new ArquivoTextoRepositorio<>("alunos.txt", Aluno::fromString)
+            new ArquivoTextoRepositorio("alunos.txt")
         );
 
+        // 3. Salvar alunos
         servicoTxt.salvar(alunos);
-        System.out.println("Alunos recuperados do TXT:");
-        servicoTxt.carregar().forEach(System.out::println);
 
-        // Escolher estratégia: Binário
+        // 4. Recuperar alunos
+        System.out.println("Alunos recuperados do TXT:");
+        for (Aluno a : servicoTxt.carregar()) {
+            System.out.println(a);
+        }
+
+        // 5. Criar serviço de BIN
         Servico<Aluno> servicoBin = new Servico<>(
             new BinarioRepositorio<>("alunos.dat")
         );
 
+        // 6. Salvar alunos
         servicoBin.salvar(alunos);
+
+        // 7. Recuperar alunos
         System.out.println("\nAlunos recuperados do BIN:");
-        servicoBin.carregar().forEach(System.out::println);
+        for (Aluno a : servicoBin.carregar()) {
+            System.out.println(a);
+        }    
     }
 }
