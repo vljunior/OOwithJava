@@ -1,0 +1,6 @@
+exemploaluno\App.class
+exemploaluno\AlunoRepository.class
+exemploaluno\AlunoService.class
+exemploaluno\CPF.class
+exemploaluno\Aluno.class
+exemploaluno\AlunoRepositoryHibernate.class

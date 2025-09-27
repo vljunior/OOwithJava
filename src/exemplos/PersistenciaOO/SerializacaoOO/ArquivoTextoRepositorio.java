@@ -31,7 +31,11 @@ public class ArquivoTextoRepositorio implements Repositorio<Aluno> {
     public void salvar(List<Aluno> lista) throws IOException {
         try (PrintWriter pw = new PrintWriter(new FileWriter(arquivo))) {
             for (Aluno obj : lista) {
-                pw.println(obj.toString()); // usa toString
+                /* usa toString: CUIDADO IMPORTANTE, 
+                   foi feito pra simplificar, mas trava o toString!
+                   Pode resolver com uma interface nova exigindo 
+                   um metodo conversor de string do objeto*/
+                pw.println(obj.toString()); 
             }
         }
     }
