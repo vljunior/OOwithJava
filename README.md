@@ -21,6 +21,11 @@ Pacote SOLID: O mesmo, para cada princíio SOLID;
 
 Pacote de pilares: Traz exemplos em sub pacotes de cada pilar: Abstração, Encapslamento, Herança e Polimorfismo;
 
+## Documentos
+
+Na pasta docs encontram-se os documentos PDF dos conteúdos teóricos utilizados para ministrar a disciplina.
+
 ## Autor
 Valdemar Lorenzon Junior
 juniorlorenzonvaldemar@gmail.com
+Versão 2025-2
