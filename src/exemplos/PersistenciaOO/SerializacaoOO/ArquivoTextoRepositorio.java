@@ -1,9 +1,5 @@
 package exemplos.PersistenciaOO.SerializacaoOO;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 /*
  * 3. ArquivoTextoRepositorio<T> (Implementação Concreta) 

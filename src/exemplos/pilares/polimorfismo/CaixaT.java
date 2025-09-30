@@ -29,3 +29,14 @@ public class CaixaT {
     }
 }
 
+/*
+ Exemplo método T 
+
+public class Utils {    
+ 	  public static <T> void imprimirElemento(T elemento) {
+        System.out.println(elemento);
+    }
+} 
+  
+ */
+
