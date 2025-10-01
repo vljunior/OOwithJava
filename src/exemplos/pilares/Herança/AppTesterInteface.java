@@ -1,33 +1,33 @@
 package exemplos.pilares.Herança;
 
-/*public*/ interface QueroFazerParte {
+/*public*/ interface ContratoParaFazerParte {
 
-    void facoParte(); //método abstrato, sem corpo   
+    void assinarContrato(); //método abstrato, sem corpo   
 
 }
 
-/*public*/ abstract class TentandoFazerParte implements QueroFazerParte {   
+/*public*/ abstract class LendoSemAssinarContrato implements ContratoParaFazerParte {   
 
     //Método concreto
-    public void metodoConcreto() {
-        System.out.println("Eu sou um método concreto de quem tenta fazer parte!");
+    public void algumaImplementacaoQualquer() {
+        System.out.println("Eu sou um método concreto de quem leu, mas não assinou o contrato");
     }
 }
 
-/*public*/class FacoPartePelaInterface implements QueroFazerParte {
+/*public*/class AssinoOContrato implements ContratoParaFazerParte {
 
     @Override
-    public void facoParte() {
-        System.out.println("Eu faço parte pela implementacao da interface!");
+    public void assinarContrato() {
+        System.out.println("Eu assinei o controato, com a implementacao da interface!");
     }
 }   
 
 
-/*public*/class FacoPartePelaAbstract extends  TentandoFazerParte {
+/*public*/class AssinoTambemOContrato extends  LendoSemAssinarContrato {
 
     @Override
-    public void facoParte() {
-        System.out.println("Eu faço parte pela implementacao da classe abstrata!");
+    public void assinarContrato() {
+        System.out.println("Eu assino o contrato, com a implementacao da classe que leu, mas não assinou o contrato, repassando a assinatura.");
     }
 }   
 
@@ -36,43 +36,43 @@ public class AppTesterInteface {
 
     public static void main(String[] args) {
         
-        //QueroFazerParte obj = new QueroFazerParte(); //Não compila, interface não pode ser instanciada
-        //TentandoFazerParte obj2 = new TentandoFazerParte(); //Não compila, classe abstrata não pode ser instanciada
+        //ContratoParaFazerParte obj = new ContratoParaFazerParte(); //Não compila, interface não pode ser instanciada
+        //LendoSemAssinarContrato obj2 = new LendoSemAssinarContrato(); //Não compila, classe abstrata não pode ser instanciada
 
         /*Referencia da interface, instancia pela classe concreta
-          O lado esquerdo (QueroFazerParte objeto1) é o tipo de referência. 
-          Ele diz: “eu só sei que este objeto tem a forma de QueroFazerParte”.
-          O lado direito (new FacoPartePelaInterface()) é a especialização concreta, 
+          O lado esquerdo (ContratoParaFazerParte objeto1) é o tipo de referência. 
+          Ele diz: “eu só sei que este objeto tem a forma de ContratoParaFazerParte”.
+          O lado direito (new AssinoOContrato()) é a especialização concreta, 
           que realmente cria o objeto.
 
-          Estamos programando para a interface, e não para a implementação.
+          Estamos programando para a interface, e não para a especialização.
 
-          “Sempre usamos a interface como referência porque assim o código depende do contrato, não da implementação.
+          “Sempre usamos a interface como referência porque assim o código depende do contrato, não da implementação especializada.
           O new sempre vem de uma especialização concreta, porque só ela está pronta para ser usada.”
 
         */
-        QueroFazerParte objeto1 = new FacoPartePelaInterface();
-        objeto1.facoParte();
+        ContratoParaFazerParte objeto1 = new AssinoOContrato();
+        objeto1.assinarContrato();
 
-        QueroFazerParte objeto2 = new FacoPartePelaAbstract();  
-        objeto2.facoParte();
+        ContratoParaFazerParte objeto2 = new AssinoTambemOContrato();  
+        objeto2.assinarContrato();
 
-        /*Se agora estivermos programando pra implementação, 
-          Há necessidades, downcast
-          objeto2.metodoConcreto(); //Não compila, referencia da interface não conhece o método concreto
+        /*Se agora estivermos programando pra especializações, 
+          Há necessidades de downcasting
+          objeto2.algumaImplementacaoQualquer(); //Não compila, referencia da interface não conhece o método concreto
           Quanto mais genérica for a referência, menos detalhes ela conhece.
           A interface conhece apenas o contrato mínimo, mas não os “extras”.         
          */
 
-        ((FacoPartePelaAbstract)objeto2).metodoConcreto(); //Down
+        ((AssinoTambemOContrato)objeto2).algumaImplementacaoQualquer(); //Down
 
-        if (objeto2 instanceof FacoPartePelaAbstract) {
-            ((FacoPartePelaAbstract)objeto2).metodoConcreto(); //Down
+        if (objeto2 instanceof AssinoTambemOContrato) {
+            ((AssinoTambemOContrato)objeto2).algumaImplementacaoQualquer(); //Down
         }
 
-        FacoPartePelaAbstract objeto3 = new FacoPartePelaAbstract();
-        objeto3.facoParte();
-        objeto3.metodoConcreto(); //Compila, referencia da classe concreta conhece o método concreto, além da Interface       
+        AssinoTambemOContrato objeto3 = new AssinoTambemOContrato();
+        objeto3.assinarContrato();
+        objeto3.algumaImplementacaoQualquer(); //Compila, referencia da classe concreta conhece o método concreto, além da Interface       
         
     }    
 }
