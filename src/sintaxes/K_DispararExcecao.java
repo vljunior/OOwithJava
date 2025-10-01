@@ -36,7 +36,7 @@ public class K_DispararExcecao {
             Video.pausa();
             System.exit(0); //Abortando o sistema
         }
-
+        
         Video.mensagemOk("Você executou com sucesso o programa!!!. Número: " + numero);
 
     }       
