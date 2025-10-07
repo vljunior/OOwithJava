@@ -12,7 +12,7 @@ package exercicios.corrida;
     Regras principais:
     - A cada aceleração, o carro ganha 25 km/h e perde 2 de combustível.
     - A cada frenagem, o carro perde 20 km/h.
-    - O carro não pode ultrapassar 320 km/h nem ficar abaixo de 0 km/h.
+    - O carro não pode ultrapassar sua velocidade máxima km/h nem ficar abaixo de 0 km/h.
     - O combustível varia entre 0 e 100.
     - Distância percorrida = velocidade (km/h) * 3.6 * tempo (s). 
       O tempo é fixo em 0,5 segundos por aceleração.
@@ -36,7 +36,7 @@ public class CorridaApp {
         Piloto piloto = new Piloto(nomePiloto);      
         String escuderia = Teclado.readString("Digite a escuderia do carro: ");        
         int numeroCarro = Teclado.readInt("Digite o número do carro: ");
-        Carro carro = new Carro(escuderia, numeroCarro, piloto);
+        Carro carro = new Carro(escuderia, numeroCarro, piloto, 310); //fixado 310
 
         // Variáveis de corrida
         double distanciaPercorrida = 0;
@@ -48,6 +48,9 @@ public class CorridaApp {
         boolean corridaAtiva = true;
 
         while (corridaAtiva) {
+
+            //Separar o menu em método static
+
             System.out.println("\nEscolha uma ação: ");
             System.out.println("1 - Acelerar");
             System.out.println("2 - Frear");
@@ -83,7 +86,7 @@ public class CorridaApp {
                     Video.barraProgresso(20, 50);
                     break;
                 case 5:
-                    mostrarStatus(carro, pista, distanciaPercorrida, voltaAtual);
+                    mostrarStatus(carro, pista, distanciaPercorrida, voltaAtual, piloto);
                     break;
                 case 6:
                     corridaAtiva = false;
@@ -101,15 +104,16 @@ public class CorridaApp {
         }        
     }
 
-    private static void mostrarStatus(Carro carro, Pista pista, double distanciaPercorrida, int voltaAtual) {
+    //Fazer em toString de cada entidade! Separar reponsabilidades!
+
+    private static void mostrarStatus(Carro carro, Pista pista, double distanciaPercorrida, int voltaAtual, Piloto piloto) {
         double distanciaVoltaAtual = distanciaPercorrida % pista.getDistanciaPorVolta();
         double porcentagemVolta = (distanciaVoltaAtual / pista.getDistanciaPorVolta()) * 100;
 
-        Video.rodape("Status do carro!");        
-        System.out.println("Carro " + carro.getEscuderia() + " número " + carro.getNumero() +
-                           " conduzido por " + carro.getPiloto().getNome());
-        System.out.println("Velocidade atual: " + carro.getVelocidade() + " km/h");
-        System.out.println("Combustível: " + carro.getCombustivel() + "%");
+        Video.rodape("Status do carro!");
+
+        System.out.println(carro.toString());
+        System.out.println("Conduzido por: " + piloto.toString());                                          
         System.out.println("Volta " + voltaAtual + " de " + pista.getVoltasTotais());
         System.out.printf("Percorreu %.0f/ %d metros - %.2f%% da volta\n", 
                           distanciaVoltaAtual, pista.getDistanciaPorVolta(), porcentagemVolta);

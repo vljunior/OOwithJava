@@ -47,7 +47,7 @@ public class Teclado {
         while (true) {
             String valor = scanner.nextLine().trim();
             if (!valor.isEmpty()) return valor;
-            System.out.println("Entrada vazia ou buffer limpado! Digite novamente.");
+            System.out.println("Entrada vazia ou buffer foi limpado! Digite novamente.");
         }
     }
 

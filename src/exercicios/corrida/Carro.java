@@ -6,15 +6,16 @@ public class Carro {
     private Piloto piloto;
     private int velocidade;
     private int combustivel;
-    private final int VELOCIDADE_MAX = 320;
+    private final int VELOCIDADE_MAX;
     private final int COMBUSTIVEL_MAX = 100;
 
-    public Carro(String escuderia, int numero, Piloto piloto) {
+    public Carro(String escuderia, int numero, Piloto piloto, int velocidadeMaxima) {
         this.escuderia = escuderia;
         this.numero = numero;
         this.piloto = piloto;
         this.velocidade = 0; 
         this.combustivel = COMBUSTIVEL_MAX; 
+        this.VELOCIDADE_MAX = velocidadeMaxima;
     }
 
     public void acelerar() {
@@ -69,4 +70,14 @@ public class Carro {
     public boolean temCombustivel() {
         return combustivel > 0;
     }
+
+    @Override
+    public String toString() {
+        return "Carro [getEscuderia()=" + getEscuderia() + ", getNumero()=" + getNumero() + ", 
+                getVelocidade()=" + getVelocidade() + ", getCombustivel()=" + getCombustivel()
+                + ", temCombustivel()=" + temCombustivel() + "]";
+    }
+
+
+    
 }

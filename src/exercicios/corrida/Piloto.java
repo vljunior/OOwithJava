@@ -7,6 +7,11 @@ public class Piloto {
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return "Piloto [getNome()=" + getNome() + "]";
+    }
+
     public String getNome() {
         return nome;
     }
