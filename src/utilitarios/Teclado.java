@@ -27,8 +27,14 @@ public class Teclado {
         while (true) {
             try {
                 return scanner.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida! Digite um número inteiro.");
+            }            
+            catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número inteiro.");                
+            }            
+            catch (Exception e) {
+                System.out.println("Erro de entrada! Digite novamente um número inteiro.");                
+            }
+            finally {
                 scanner.nextLine(); // limpa buffer
             }
         }

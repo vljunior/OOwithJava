@@ -1,4 +1,4 @@
-package exemplos.pilares.polimorfismo;
+package exemplos.pilares.polimorfismo.Generics;
 
 /*public*/ class GenericCounter<T extends Number> {
 

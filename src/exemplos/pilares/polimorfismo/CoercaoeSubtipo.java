@@ -1,6 +1,6 @@
 package exemplos.pilares.polimorfismo;
 
-//Autor: Valdemar Lorenzon Junior
+//Autor: Lorenzon 
 import java.util.ArrayList;
 import java.util.List;
 
