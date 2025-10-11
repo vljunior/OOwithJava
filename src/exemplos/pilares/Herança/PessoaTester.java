@@ -51,7 +51,6 @@ package exemplos.pilares.Herança;
 }
 
 
-
 public class PessoaTester {
 
 

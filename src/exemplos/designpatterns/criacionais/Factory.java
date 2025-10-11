@@ -25,14 +25,17 @@ package exemplos.designpatterns.criacionais;
 
 /*public*/ class EspecializacaoFactory {
     public static Generica criarEspecializacao (String tipo) {
+        
         if (tipo.equalsIgnoreCase("1")) {
             return new Especializacao1();
-        } else if (tipo.equalsIgnoreCase("2")) {
+        } 
+        
+        if (tipo.equalsIgnoreCase("2")) {
             return new Especializacao2();
-        } else {
-            return null; //ou dispara uma exceção
-            //throw new IllegalArgumentException("Tipo de especialização inválido: " + tipo);
-        }  
+        } 
+
+        return null; //ou dispara uma exceção
+        //throw new IllegalArgumentException("Tipo de especialização inválido: " + tipo);        
     }
 }
 

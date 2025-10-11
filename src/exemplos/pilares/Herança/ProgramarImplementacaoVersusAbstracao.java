@@ -73,5 +73,11 @@ public class ProgramarImplementacaoVersusAbstracao { //TestePagamentos
         // Programando para abstração-abstract (usando a abstract como referência)
         Pagamento pagamento2 = pagamento2 = new Pix(250.0);
         pagamento2.pagar(350.0); // decisão concreta é feita pela subclasse Boleto
+
+
+        //Note, em todos os casos, a referência é por implements ou por extends e o new é pra classe abstração, 
+        //a concreta. Aí que esta o detalhe que o polimorfismo traz: cada método responderá de acordo com a
+        //sua especialização.... ;)
+
     }
 }
