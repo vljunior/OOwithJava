@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.SerializacaoOO;
+package exemplos.PersistenciaOO.SerializacaoOO.Exemplo;
 
 /* Conexão com SOLID + Patterns
  * SRP: cada classe faz uma coisa só (Aluno = dados, Repositorio = contrato, etc.).

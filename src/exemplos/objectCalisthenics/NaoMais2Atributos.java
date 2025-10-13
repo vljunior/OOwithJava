@@ -1,6 +1,6 @@
 package exemplos.objectCalisthenics;
 
-import exemplos.PersistenciaOO.SerializacaoOO.Aluno;
+import exemplos.PersistenciaOO.SerializacaoOO.Exemplo.Aluno;
 
 /* 7. “Não use mais de duas variáveis de instância por classe” 
  *     O objetivo não é uma “lei rígida”, mas uma restrição didática: forçar a pensar em classes menores, mais focadas e coesas.

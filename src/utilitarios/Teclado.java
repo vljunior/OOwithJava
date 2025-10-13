@@ -1,4 +1,4 @@
-package utilitarios;
+package temadogrupo.utilitarios;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -27,14 +27,8 @@ public class Teclado {
         while (true) {
             try {
                 return scanner.nextInt();
-            }            
-            catch (InputMismatchException e) {
-                System.out.println("Entrada inválida! Digite um número inteiro.");                
-            }            
-            catch (Exception e) {
-                System.out.println("Erro de entrada! Digite novamente um número inteiro.");                
-            }
-            finally {
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida! Digite um número inteiro.");
                 scanner.nextLine(); // limpa buffer
             }
         }
@@ -53,7 +47,7 @@ public class Teclado {
         while (true) {
             String valor = scanner.nextLine().trim();
             if (!valor.isEmpty()) return valor;
-            System.out.println("Entrada vazia ou buffer foi limpado! Digite novamente.");
+            System.out.println("Entrada vazia ou buffer limpado! Digite novamente.");
         }
     }
 
@@ -83,17 +77,19 @@ public class Teclado {
     }
 
     /**
-     * Lê uma data no formato yyyy-MM-dd (ex: 2025-07-24).
+     * Lê uma data no formato yyyy-MM-dd (ex: 2025-07-24). mudei abaixo
      * Repete até o usuário digitar um formato válido.
      */
+
     public static LocalDate readDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                                       //DateTimeFormatter.ofPattern("yyyy-MM-dd");
         while (true) {
             String entrada = readString();
             try {
                 return LocalDate.parse(entrada, formatter);
             } catch (DateTimeParseException e) {
-                System.out.println("Data inválida! Use o formato AAAA-MM-DD.");
+                System.out.println("Data inválida! Use o formato dd/MM/yyyy.");
             }
         }
     }

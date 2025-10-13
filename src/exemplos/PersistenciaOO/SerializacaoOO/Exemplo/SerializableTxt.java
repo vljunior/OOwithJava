@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.SerializacaoOO;
+package exemplos.PersistenciaOO.SerializacaoOO.Exemplo;
 
 /* 0. Passo BASE:
  * Se faz necessário definir um contrato para que qualquer entidade que queria ser 

@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.SerializacaoOO;
+package exemplos.PersistenciaOO.SerializacaoOO.Exemplo;
 
 
 /*
