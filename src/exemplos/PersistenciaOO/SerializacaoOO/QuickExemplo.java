@@ -37,9 +37,9 @@ public class QuickExemplo {
 
         // Lista inicial
         List<Entidade> lista = new ArrayList<>();
-        lista.add(new Entidade(1, "Vitor"));
-        lista.add(new Entidade(2, "Luiz"));
-        lista.add(new Entidade(3, "Lorenzon"));
+        lista.add(new Entidade(1, "José Toniazzo"));
+        lista.add(new Entidade(2, "Marcos Moretto"));
+        lista.add(new Entidade(3, "Valdemar Lorenzon Junior"));
 
         // Serialização (Gravar os objetos no arquivo)
         try {
