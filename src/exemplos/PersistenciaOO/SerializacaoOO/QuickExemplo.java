@@ -27,21 +27,21 @@ class Entidade implements Serializable {
 
     @Override
     public String toString() {
-        return "Entidade {codigo=" + codigo + ", nome='" + nome + "'}";
+        return "Entidade {codigo= " + codigo + ", nome= " + nome + "}";
     }
 }
 
 public class QuickExemplo {      
     public static void main(String[] args) {
-        String ARQUIVO = "entidades.txt";
+        String ARQUIVO = "entidades.dat"; //"Tipado, binário"
 
         // Lista inicial
         List<Entidade> lista = new ArrayList<>();
-        lista.add(new Entidade(1, "Alice"));
-        lista.add(new Entidade(2, "Bob"));
-        lista.add(new Entidade(3, "Carlos"));
+        lista.add(new Entidade(1, "Vitor"));
+        lista.add(new Entidade(2, "Luiz"));
+        lista.add(new Entidade(3, "Lorenzon"));
 
-        // Serialização (salvar objetos no arquivo)
+        // Serialização (Gravar os objetos no arquivo)
         try {
             FileOutputStream fos = new FileOutputStream(ARQUIVO);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -52,7 +52,7 @@ public class QuickExemplo {
         catch (FileNotFoundException e) {
         }
         catch (IOException e) {
-        }
+        }        
 
         // Desserialização (ler objetos do arquivo)
         try {
@@ -68,6 +68,6 @@ public class QuickExemplo {
         catch (ClassNotFoundException e) {
         } 
         catch (IOException e) { 
-        }        
+        }            
     }
 }

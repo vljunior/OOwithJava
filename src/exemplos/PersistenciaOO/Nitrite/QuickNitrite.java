@@ -1,4 +1,4 @@
-package exemplos.PersistenciaOO.NItrite;
+package exemplos.PersistenciaOO.Nitrite;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.Id;
 import org.dizitart.no2.objects.ObjectRepository;

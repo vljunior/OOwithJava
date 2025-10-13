@@ -39,8 +39,7 @@ public class ArquivoTextoRepositorio<T extends SerializableTxt> implements Repos
         List<T> out = new ArrayList<>();
         try (Scanner sc = new Scanner(new File(arquivo))) {
             while (sc.hasNextLine()) {
-                String linha = sc.nextLine();
-                @SuppressWarnings("unchecked")
+                String linha = sc.nextLine();                
                 T obj = (T) prototipo.fromSerializableTxt(linha); //por isso <T extends SerializableTxt>
                 out.add(obj);
             }
