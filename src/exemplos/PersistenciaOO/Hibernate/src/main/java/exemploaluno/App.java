@@ -9,6 +9,10 @@ public class App {
         //service.cadastrarAluno(aluno);
 
         System.out.println("Alunos cadastrados:");
-        service.listarAlunos().forEach(System.out::println);
+        //Function com Lambda
+
+        for (Aluno aluno : service.listarAlunos()) {
+            System.out.println(aluno);
+        }
     }
 }
