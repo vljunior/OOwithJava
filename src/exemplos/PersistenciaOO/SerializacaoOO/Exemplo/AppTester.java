@@ -9,10 +9,8 @@ package exemplos.PersistenciaOO.SerializacaoOO.Exemplo;
  * Strategy Pattern: diferentes formas de persistência são estratégias intercambiáveis. 
  */
 
-import java.io.*;
-import java.util.*;
-import java.util.function.Function;
 
+import java.util.*;
 /* 6. AppTester (Classe de Aplicação)
  * Função: ponto de entrada (main).
  * Por que existe?

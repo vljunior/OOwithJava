@@ -65,9 +65,7 @@ public class QuickExemplo {
                 System.out.println(e);
             }
         }
-        catch (ClassNotFoundException e) {
-        } 
-        catch (IOException e) { 
+        catch (ClassNotFoundException | IOException e) { 
         }            
     }
 }

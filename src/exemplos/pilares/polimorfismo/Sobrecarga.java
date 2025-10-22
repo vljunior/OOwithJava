@@ -12,6 +12,7 @@ class Calculadora {
     // Soma de três inteiros
     public int somar(int a, int b, int c) {
         return a + b + c;
+        //return somar (a, b) + c; Não é obrigatório fazer uma chamada em cascata, dependa da situação lógica
     }
 
     // Soma de dois números decimais
