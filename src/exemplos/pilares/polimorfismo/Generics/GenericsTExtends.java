@@ -1,10 +1,14 @@
 package exemplos.pilares.polimorfismo.Generics;
 
+//O contrato
+public interface Sonoro {
+    public void fazerSom();
+}
+
 // Classe base
-class Animal {
-    public void fazerSom() {
-        System.out.println("Som genérico de animal");
-    }
+class Animal implements Sonoro {
+    @Override
+    public abstract void fazerSom();
 }
 
 class Cachorro extends Animal {
@@ -15,10 +19,10 @@ class Cachorro extends Animal {
 }
 
 // Classe genérica que só aceita T que seja Animal (ou subclasses)
-class Zoologico<T extends Animal> {
+class Gaiola<T extends Animal & Sonoro> {
     private T animal;
 
-    public Zoologico(T animal) {
+    public Gaiola(T animal) {
         this.animal = animal;
     }
 
@@ -29,7 +33,7 @@ class Zoologico<T extends Animal> {
 
 public class GenericsTExtends {
     public static void main(String[] args) {
-        Zoologico<Cachorro> zoo = new Zoologico<>(new Cachorro());
-        zoo.ouvirSom(); // Saída: Au au!
+        Gaiola<Cachorro> gaiola = new Gaiola<>(new Cachorro());
+        gaiola.ouvirSom(); // Saída: Au au!
     }
 }

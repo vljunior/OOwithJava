@@ -4,6 +4,13 @@ package exemplos.pilares.polimorfismo.Generics;
 /*public*/ class Caixa<T> {
     private T conteudo;
 
+    public Caixa(){        
+    }
+    
+    public Caixa(T conteudo){
+        this.conteudo = conteudo;
+    }
+
     public void colocar(T objeto) {
         this.conteudo = objeto;
     }
