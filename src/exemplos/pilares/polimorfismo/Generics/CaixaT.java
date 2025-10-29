@@ -11,7 +11,7 @@ package exemplos.pilares.polimorfismo.Generics;
         this.conteudo = conteudo;
     }
 
-    public void colocar(T objeto) {
+    public void colocar(T objeto) {                                                                                                                                                                                                                          +-
         this.conteudo = objeto;
     }
     

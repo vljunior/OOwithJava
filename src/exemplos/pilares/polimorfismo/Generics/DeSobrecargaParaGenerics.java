@@ -14,10 +14,6 @@ class Exibir {
     public static void mostrar (Object valor) {
         System.out.println(valor); //toString();
     }
-
-    public static <T> mostrar (T valor){
-        System.out.println(valor); 
-    }
 }
 
 

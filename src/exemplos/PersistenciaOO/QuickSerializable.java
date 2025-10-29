@@ -31,7 +31,7 @@ class Entidade implements Serializable {
     }
 }
 
-public class QuickExemplo {      
+public class QuickSerializable {      
     public static void main(String[] args) {
         String ARQUIVO = "entidades.dat"; //"Tipado, binário"
 
