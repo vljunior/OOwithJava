@@ -25,22 +25,28 @@ public class AppTester {
 
         // 1. Criar lista de alunos
         List<Aluno> alunos = new ArrayList<Aluno>();
+        /*
         alunos.add(new Aluno("Maria", 20));
         alunos.add(new Aluno("João", 22));
+        */        
 
         // 2. Criar serviço de TXT
         Servico<Aluno> servicoTxt = new Servico<Aluno>(
             new ArquivoTextoRepositorio<Aluno>("alunos.txt", new Aluno("", 0))
         );
 
+        /*
+
         // 3. Salvar alunos
         servicoTxt.salvar(alunos);
+        */
 
         // 4. Recuperar alunos
         System.out.println("Alunos recuperados do TXT:");
         for (Aluno a : servicoTxt.carregar()) {
             System.out.println(a);
         }
+        /*/
 
         // 5. Criar serviço de BIN
         Servico<Aluno> servicoBin = new Servico<>(
@@ -55,5 +61,7 @@ public class AppTester {
         for (Aluno a : servicoBin.carregar()) {
             System.out.println(a);
         }
+
+        */
     }
 }

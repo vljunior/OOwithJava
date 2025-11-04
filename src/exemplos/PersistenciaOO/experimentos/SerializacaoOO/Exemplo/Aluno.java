@@ -52,6 +52,12 @@ public class Aluno implements Serializable, SerializableTxt {
         //e fazendo split pelo separador ";"
         //Jogando no construtor para retomar o objeto e o retornando        
         String[] partes = linha.split(";");
+
+        if (partes.length < 2) {
+            System.out.println("Linha inválida: " + linha);
+            return null; 
+        }
+        
         String nome = partes[0];
         int idade = Integer.parseInt(partes[1]);
         return new Aluno(nome, idade);
