@@ -34,9 +34,14 @@ import utilitarios.*;
         Video.mensagem("Acionado método e executado pela classe Concreta.");
     }
 
+    void metodoParticular(){
+        Video.mensagem("Acionado método particular executado pela classe Concreta.");
+
+    }
+
 }
 
-public class Subtipo {
+public class SubTipo {
 
     public static void testarMensagem(Interfaceavel objeto) {
         objeto.metodoInterfaceado();
@@ -71,6 +76,10 @@ public class Subtipo {
         testarMensagem(referenciaParaImplementacao);
         testarMensagem(referenciaParaBase);
         testarMensagem(referenciaParaConcreta);
+
+        if (referenciaParaConcreta instanceof Concreta){
+            referenciaParaConcreta.metodoParticular();
+        }
     }
 
 }
