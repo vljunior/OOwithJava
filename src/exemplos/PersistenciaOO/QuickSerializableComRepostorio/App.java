@@ -4,10 +4,10 @@ public class App {
         Repositorio<Pessoa> repo = new RepositorioEntidade<>(Pessoa.class);
         ServicoEntidade<Pessoa> servico = new ServicoEntidade<>(repo); // injeção via construtor
 
-        servico.adicionar(new Pessoa("Lorenzon"));
-        servico.adicionar(new Pessoa("Vinícius"));
+        servico.adicionar(new Pessoa("Lorenzon"));       
 
-        System.out.println("Pessoas salvas:");
+        System.out.println("Entidades salvas:");
+
         servico.listar().forEach(System.out::println);
     }
 }

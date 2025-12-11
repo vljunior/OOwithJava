@@ -1,0 +1,5 @@
+101;Standard;Livre
+102;Standard;Livre
+207;Plus;Livre
+210;Plus;livre
+211;Standard;Em Limpeza

@@ -6,7 +6,7 @@ public class ServicoEntidade<E extends Serializable> {
     private final Repositorio<E> repositorio;
     private List<E> lista;
 
-    // Injeção de dependência via construtor
+    // Injecao do repositorio
     public ServicoEntidade(Repositorio<E> repositorio) {
         this.repositorio = repositorio;
         this.lista = new ArrayList<>();
