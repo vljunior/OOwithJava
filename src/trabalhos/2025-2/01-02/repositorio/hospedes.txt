@@ -1,4 +1,0 @@
-Bruno;1;1
-joao;22;9090
-carlos;29;001
-rafael;31;02021
